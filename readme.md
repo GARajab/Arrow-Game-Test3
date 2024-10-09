@@ -23,6 +23,7 @@
 11. I need a function to count scores and other for rounds and correct/incorrect player boxes.
 12. I need a function to reset the full game except the score after each round.
 13. will use this function to update the stattus of the pc arraw as will as player array
+
 ```JavaScript
 const updateBoard = () => {
   for (let i = 0; i < board.length; i++) {
@@ -31,7 +32,9 @@ const updateBoard = () => {
   }
 }
 ```
+
 14. will use this function to update the massage:
+
 ```JavaScript
 const updateMessage = () => {
   if (winner === false && tie === false) {
@@ -149,19 +152,17 @@ const showHideResetBtn = () => {
 20. the most importatnt function to highlite the correct directions:
 
 ```javascript
-
 const highlightWinningCombination = () => {
   for (let index of winningCombination) {
     const cell = document.getElementById(`${index}`)
     cell.style.backgroundColor = "lightgreen"
   }
 }
-
 ```
+
 21. this function maybe used to reset winning colors:
 
 ```javascript
-
 const rstWinColorBack = () => {
   for (let i = 0; i < board.length; i++) {
     const cell = document.getElementById(`${i}`)
@@ -169,16 +170,13 @@ const rstWinColorBack = () => {
     cell.textContent = ""
   }
 }
-
 ```
 
-22. this will be used for dark mode: 
+22. this will be used for dark mode:
 
 ```javascript
-
 animatedReset.addEventListener("click", init)
 const setTheme = (theme) => (document.documentElement.className = theme)
-
 ```
 
 23. this to handel the clickes:
@@ -188,14 +186,16 @@ boards.forEach((cell) => {
   cell.addEventListener("click", handleClick)
 })
 ```
+
 finish 90% of front-end
-back-end logical *pending
-  -listeners
-  -change classes
-  -arrow direction logic
-  -pc arrows random logic
-  -pc arrows disappeare logic
-  -correct arrows logic
-  -incorrect arrows logic
-  -rounds
-  -reset btn
+back-end logical \*pending
+-listeners
+-change classes
+-arrow direction logic
+-pc arrows random logic
+-pc arrows disappeare logic
+-correct arrows logic
+-incorrect arrows logic
+-rounds
+-counter before game over
+-reset btn (Done)
