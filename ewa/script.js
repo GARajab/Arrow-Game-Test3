@@ -2,10 +2,37 @@
 
 // variable
 let pcArrwosRandomByMath = []
+let playerArrowsDirections=[]
+
 // functions
-const leftOrRight = (event) => {
-  console.log(event.target.id)
-}
+const leftOrRight = () => {
+  
+playerArrowsImgs.forEach((playerArrowsImg,index)=>{
+  let imgsValue = playerArrowsImg.getAttribute("value")
+   // Append new contents
+   playerArrowsDirections.push(imgsValue)
+   playerArrowsDirections.length = index+1
+   
+})
+
+
+ 
+const filling = (()=>{
+  let newElements = playerArrowsDirections; // Replace with your actual new elements
+
+  fillArray(newElements);
+})
+
+filling()
+
+  // console.log(event.target.id)
+  // let testImg = document.getElementById("imgZero")
+  // console.dir(testImg.getAttribute("value"))
+  }
+
+  const fillPlayerTriesArray = (()=>{
+
+  })
 // working 100% for player cards
 const initializeGame = () => {
   //   resetPcArrows()
@@ -13,7 +40,7 @@ const initializeGame = () => {
   let pcArrwosRandomByMath = []
 }
 const fillPcArrowsRandomly = () => {
-  for (let i = 0; i <= 5; i++) {
+  for (let i = 0; i <= 7; i++) {
     pcArrwosRandomByMath.push(Math.floor(Math.random() * 3))
   }
 
@@ -48,7 +75,13 @@ const startBtn = document.getElementById("startGame")
 const rstButton = document.getElementById("resetFullGame")
 // full pcArrows cashing
 const pcArrows = document.querySelectorAll(".pcImg0")
-// events
+// full playerArrows cashing
+const playerArrowsImgs = document.querySelectorAll("#imgID")
+
+
+
+
+// events only (any Thing To Be Clicked Will Be Here)
 
 // start button
 startBtn.addEventListener("click", startGame)
@@ -58,3 +91,21 @@ rstButton.addEventListener("click", initializeGame)
 buttons.forEach((button) => {
   button.addEventListener("click", leftOrRight)
 })
+
+
+
+
+// test area
+
+let array = new Array(7).fill(null); // Create an array of length 7 filled with null values
+
+function fillArray(newElements) {
+  
+
+  array.splice(0, 7, ...newElements); // Replace the first 7 elements with the new elements
+  console.log(array); // Log the updated array
+}
+
+// Assuming you have a button element with the id "myButton"
+
+
